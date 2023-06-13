@@ -1,0 +1,5 @@
+Id: B12349, Name: Peches, Price: 27.0, Quantity: 9, bookPublisher: P12345, Status: Available
+Id: B12344, Name: Becka, Price: 20.0, Quantity: 1, bookPublisher: P12345, Status: Available
+Id: B12343, Name: Neaches, Price: 23.0, Quantity: 1, bookPublisher: P12345, Status: Available
+Id: B12345, Name: Peacjes, Price: 25.0, Quantity: 1, bookPublisher: P12345, Status: Available
+Id: B12348, Name: HelloWorld, Price: 23.0, Quantity: 2, bookPublisher: P12345, Status: Available

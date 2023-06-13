@@ -1,0 +1,6 @@
+======Marketing======
+_____Salaried Employee_____
+______Hourly Employee______
+
+Employee{ssn=S�912, firstName=Minh, lastName=Tan, birthDay=25/12/2003, phone=1231251231, email=asd@gmail.com
+         wage=2.3, workingHours=42.0}

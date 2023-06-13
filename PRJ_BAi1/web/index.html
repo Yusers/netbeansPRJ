@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PRJ BAI 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p> <a href="Servlet1">Link 1</a> </p>
+        <p> <a href="Servlet2">Link 2</a> </p>
+        <form action="Servlet3" method="post">
+            <p> <input type="text" name="txtname" placeholder="enter name" /> </p>
+            <p> <input type="password" name="txtpassword" placeholder="enter password" /> </p>
+            <p> <input type="radio" name="txtsex" value="female" checked="" />
+                <input type="radio" name="txtsex" value="male" /></p>
+            <p>
+                <select name="txtjob">
+                    <option value="student">student</option>
+                    <option value="dancer">dancer</option>
+                    <option value="other">other</option>
+                </select>
+            </p>
+            <p>
+                <select name="txtbook" multiple="">
+                    <option value="C#">Lap trinh C#</option>
+                    <option value="Java">Java</option>
+                    <option value="Han va yeu">han va yeu</option>
+                </select>
+            </p>
+            <p><input type="submit" value="register" /></p>
+        </form>
+        <hr />
+        <table>
+            <tr>
+            <form action="Servlet4" method="get">
+                <input type="hidden" value="P1" name="txtid" />
+                <input type="hidden" value="100" name="txtprice" />
+                <td>ID:1</td>
+                <TD>Name: quan</TD>
+                <TD>Price: 100</TD>
+                <td><img src="image/1111.jpg" width="100" height="100" /></td>
+                <td><input type="number" value="1" min="1" max="10" name="txtquantity" /></td>
+                <td><input type="submit" value="buy" /></td>
+            </form>
+        </tr>
+        <tr>
+        <form action="Servlet4" method="get">
+            <input type="hidden" value="P2" name="txtid" />
+            <input type="hidden" value="150" name="txtprice" />
+            <td>ID:2</td>
+            <TD>Name: ao</TD>
+            <TD>Price: 150</TD>
+            <td><img src="image/1111.jpg" width="100" height="100" /></td>
+            <td><input type="number" value="1" min="1" max="10" name="txtquantity" /></td>
+            <td><input type="submit" value="buy" /></td>
+        </form>
+    </tr>
+</table>
+</body>
+</html>
