@@ -48,7 +48,7 @@ public class OrderDAO {
                                 + "values(?,?,?)";
                         pst = cn.prepareStatement(sql);
                         pst.setInt(1, orderid);
-                        pst.setString(2, c.getCarID());
+                        pst.setString(2, c.getId());
                         pst.setInt(3, cart.get(c));
                         result = pst.executeUpdate();
                     }

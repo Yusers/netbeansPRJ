@@ -11,8 +11,8 @@ package basicobject;
  * @author overw
  */
 public class Car {
-    private String carID;
-    private String carName;
+    private String id;
+    private String name;
     private String description;
     private double price;
     private int speed;
@@ -21,31 +21,31 @@ public class Car {
     public Car() {
     }
 
-    public Car(String carID, String carName, String description, double price, int speed, boolean status) {
-        this.carID = carID;
-        this.carName = carName;
+    public Car(String id, String name, String description, double price, int speed, boolean status) {
+        this.id = id;
+        this.id = name;
         this.description = description;
         this.price = price;
         this.speed = speed;
         this.status = status;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     
-    public String getCarID() {
-        return carID;
-    }
-
-    public void setCarID(String carID) {
-        this.carID = carID;
-    }
-
-    public String getCarName() {
-        return carName;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
-    }
-
     public String getDescription() {
         return description;
     }

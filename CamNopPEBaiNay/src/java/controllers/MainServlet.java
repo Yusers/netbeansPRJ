@@ -35,7 +35,7 @@ public class MainServlet extends HttpServlet {
             String path = "index.jsp";
             String a = request.getParameter("action");
             if (a == null || a.isEmpty()) {
-                path = "index.jsp";
+                path = "index2.jsp";
             } else if (a.equals("1")) {
                 path = "loginpage.jsp";
             } else if (a.equals("2")) {
@@ -51,7 +51,7 @@ public class MainServlet extends HttpServlet {
             } else if (a.equals("7")) {
                 path = "AddToCartServlet";
             } else if (a.equals("8")) {
-                path = "ViewCart.jsp";
+                path = "ViewCart2.jsp";
             } else if (a.equals("9")) {
                 // update or remove
                 String removeBtn = request.getParameter("btnremove");

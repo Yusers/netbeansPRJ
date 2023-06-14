@@ -42,7 +42,7 @@ public class UpdateServlet extends HttpServlet {
             if(cart!=null && cart.size() > 0) {
             Car findCar = null;
             for(Car c: cart.keySet()) {
-                if(c.getCarID().equals(carid)) {
+                if(c.getId().equals(carid)) {
                     findCar = c;
                 }
             }

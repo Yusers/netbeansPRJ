@@ -11,7 +11,7 @@ package basicobject;
  */
 public class User {
 
-    private String userid;
+    private String id;
     private String fullname;
     private String role;
     private String password;
@@ -20,19 +20,19 @@ public class User {
 
     }
 
-    public User(String userid, String fullname, String role, String password) {
-        this.userid = userid;
+    public User(String id, String fullname, String role, String password) {
+        this.id = id;
         this.fullname = fullname;
         this.role = role;
         this.password = password;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getId() {
+        return id;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFullname() {

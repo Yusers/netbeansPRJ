@@ -5,23 +5,20 @@
  */
 package controllers;
 
-import basicobject.Car;
-import basicobject.User;
-import dbaccess.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import myobject.Item;
 
 /**
  *
  * @author overw
  */
-public class SaveOrderServlet extends HttpServlet {
+public class Servlet1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,24 +34,12 @@ public class SaveOrderServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            HttpSession session = request.getSession();
-            User us = (User) session.getAttribute("loginedUser");
-            if(us==null) {
-                response.sendRedirect("MainServlet?action=1");
-            } else {
-                String userid = us.getId();
-                HashMap<Car, Integer> cart = (HashMap<Car, Integer>) session.getAttribute("cart");
-                if(cart!=null && cart.size() > 0) {
-                    // insert order va orderdetail
-                    int result = OrderDAO.insertOrder(userid, cart);
-                    // xoa cart khoi session
-                    session.removeAttribute("cart");
-                    // chuyen trang
-                    response.sendRedirect("MainServlet?action=4");
-                }
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
+            ArrayList<Item> list = new ArrayList();
+            list.add(new Item(1, "dau hu", 1000, true));
+            list.add(new Item(1, "nam dong co", 8000, true));
+            list.add(new Item(1, "nuoc tuong", 2000, true));
+            request.setAttribute("result", list);
+            request.getRequestDispatcher("page5.jsp").forward(request, response);
         }
     }
 

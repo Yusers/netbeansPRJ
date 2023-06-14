@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/basicobject/User.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/controllers/MainServlet.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/web/ViewCart.jsp</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/controllers/RemoveServlet.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/web/index2.jsp</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/controllers/UpdateServlet.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/basicobject/Car.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/web/ViewCart2.jsp</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/controllers/AddToCartServlet.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/controllers/FindServlet.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/controllers/SaveOrderServlet.java</file>
+            <file>file:/C:/Users/overw/Documents/NetBeansProjects/CamNopPEBaiNay/src/java/dbaccess/OrderDAO.java</file>
+        </group>
     </open-files>
 </project-private>

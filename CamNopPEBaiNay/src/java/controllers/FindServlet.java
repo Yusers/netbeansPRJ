@@ -45,7 +45,7 @@ public class FindServlet extends HttpServlet {
             cookie.setMaxAge(3600);
             response.addCookie(cookie);
             
-            request.setAttribute("results", listC);
+            request.setAttribute("result", listC);
                 request.getRequestDispatcher("MainServlet?action=&keyword="+ name).forward(request, response);
         } catch(Exception e) {
             e.printStackTrace();

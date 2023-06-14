@@ -47,7 +47,7 @@ public class AddToCartServlet extends HttpServlet {
                 boolean flag = false;
                 Car findCar = null;
                 for (Car tam : cart.keySet()) {
-                    if (tam.getCarID().equals(carid)) {
+                    if (tam.getId().equals(carid)) {
                         flag = true;
                         findCar = tam;
                     }

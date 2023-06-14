@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/dbaccess/TypeDao.java</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/controllers/LoadTypeServlet.java</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/controllers/LoadItemsServlet.java</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/basicobject/Item.java</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/web/index.jsp</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/dbaccess/ItemDAO.java</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/basicobject/Type.java</file>
-            <file>file:/C:/Users/overw/Documents/NetBeansProjects/workshop1/src/java/controllers/MainServlet.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
