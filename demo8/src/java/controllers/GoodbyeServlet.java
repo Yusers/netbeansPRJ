@@ -5,13 +5,8 @@
  */
 package controllers;
 
-import basicobject.Item;
-import basicobject.Type;
-import dbaccess.ItemDAO;
-import dbaccess.TypeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author overw
  */
-public class LoadItemsServlet extends HttpServlet {
+public class GoodbyeServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,20 +30,12 @@ public class LoadItemsServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try {
             /* TODO output your page here. You may use following sample code. */
-            String type = request.getParameter("type");
-            ArrayList<Type> types = TypeDao.getAllTypes();
-            for (Type t : types) {
-                if (t.getName().equals(type)) {
-                    type = String.valueOf(t.getId());
-                }
-            }
-            ArrayList<Item> list = ItemDAO.getAllItems(Integer.parseInt(type));
-            request.setAttribute("Item", list);
-            request.setAttribute("listType", types);
-            request.getRequestDispatcher("MainServlet?action=3").forward(request, response);
-        } catch (Exception e) {
+            PrintWriter out = response.getWriter();
+            out.print("<h6> sap thi pe prj301. Chuc sv deu pass </h6>");
+            //out.close(); khong dung lenh nay neu muon edit response trong filter
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
