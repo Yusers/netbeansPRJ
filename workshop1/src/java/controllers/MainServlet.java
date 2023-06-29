@@ -42,8 +42,12 @@ public class MainServlet extends HttpServlet {
                 path = "LoadItemsServlet";
             } else if (a.equals("3")) {
                 path = "item.jsp";
+            } else if (a.equals("4")) {
+                path = "EditItemsServlet";
             }
             request.getRequestDispatcher(path).forward(request, response);
+        } catch(Exception e) {
+            e.printStackTrace();
         }
     }
 

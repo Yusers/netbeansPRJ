@@ -12,6 +12,14 @@
         <servlet-name>LoadItemsServlet</servlet-name>
         <servlet-class>controllers.LoadItemsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>controllers.EditServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditItemsServlet</servlet-name>
+        <servlet-class>controllers.EditItemsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/MainServlet</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>LoadItemsServlet</servlet-name>
         <url-pattern>/LoadItemsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/EditServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditItemsServlet</servlet-name>
+        <url-pattern>/EditItemsServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -18,7 +18,7 @@
             if (list != null) {
                 String[] allType = (list.split(","));
                 for (String type : allType) {
-        %><a href="MainServlet?action=2&type=<%=type%>" style="margin-left: 20px; text-decoration: none"> <%=type%> </a> <% }
+        %><a href="MainServlet?action=2&txttype=<%=type%>" style="margin-left: 20px; text-decoration: none"> <%=type%> </a> <% }
         } else {
         %> <h1>wrong</h1> <%
             }

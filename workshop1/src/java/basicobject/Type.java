@@ -23,6 +23,11 @@ public class Type {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "Type{" + "id=" + id + ", name=" + name + ", status=" + status + '}';
+    }
+
     public int getId() {
         return id;
     }

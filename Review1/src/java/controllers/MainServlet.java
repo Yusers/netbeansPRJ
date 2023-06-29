@@ -5,13 +5,8 @@
  */
 package controllers;
 
-import basicobject.Item;
-import basicobject.Type;
-import dbaccess.ItemDAO;
-import dbaccess.TypeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author overw
  */
-public class LoadItemsServlet extends HttpServlet {
+public class MainServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,45 +32,22 @@ public class LoadItemsServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String type = request.getParameter("txttype");
-            String edit = request.getParameter("editAction");
-            String itemid = request.getParameter("txtitemid");
-            int typeId = TypeDao.getType(type.trim()).getId();
+            String url = "";
+            String action = request.getParameter("action");
+            if(action == null || action.isEmpty()) {
+                url = "login.jsp";
+            } else if(action.equals("1")) {
+                url = "LoginServlet";
+            } else if(action.equals("2")) {
+                url = "admin.jsp";
+            } else if(action.equals("3")) {
+                url = "LogoutServlet";
+            } else if(action.equals("4")) {
+                url = "InsertServlet";
+            }
             
-            // Get parameter kiem tra update co dc click hay ko
-            String update = request.getParameter("update");
-            if (update != null) {
-                // thuc hien update item
-                String name = request.getParameter("txtitemname");
-                int price = Integer.parseInt(request.getParameter("txtitemprice"));
-                // Vi da get itemid va typeId trc do nen ko can thuc hien lai
-                Item item = new Item(Integer.parseInt(itemid), name, price, typeId);
-                int rs = ItemDAO.updateItem(item);
-                if (rs > 0) {
-                    request.setAttribute("msg", "update success");
-                } else {
-                    request.setAttribute("msg", "update failed");
-                }
-            }
-            if (typeId > 0) {
-                ArrayList<Item> list = ItemDAO.getAllItems(typeId);
-                if (list != null) {
-                    request.setAttribute("Items", list);
-                    if (edit != null) {
-                        request.setAttribute("editAction", edit);
-                        request.setAttribute("Types", TypeDao.getAllTypes());
-                        if (itemid != null) {
-                            request.setAttribute("Item", ItemDAO.getItem(Integer.parseInt(itemid)));
-                        }
-                    }
-                    request.setAttribute("Type", type);
-                    request.getRequestDispatcher("MainServlet?action=3").forward(request, response);
-                } else {
-                    out.print("List are empty");
-                }
-            }
-
-        } catch (Exception e) {
+            request.getRequestDispatcher(url).forward(request, response);
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
