@@ -17,7 +17,7 @@
     </head>
     <script>
         function warning() {
-            var ans = window.confirm("aus?");
+            var ans = window.confirm("Are you sure?");
             if (ans) {
                 return true;
             }
