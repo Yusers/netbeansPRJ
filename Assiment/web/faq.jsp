@@ -54,5 +54,6 @@
                 <h1>Please choose items to get FAQS</h1>
             </c:if>
         </c:if>
+        <a href="MainServlet?action=">Go Back</a>
     </body>
 </html>

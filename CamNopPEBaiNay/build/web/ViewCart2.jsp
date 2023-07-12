@@ -26,7 +26,7 @@
     </script>
     <body>
         <c:set var="cart" value="${sessionScope.cart}"/>
-        
+
         <c:if test="${cart!=null}"> 
             <h1>Your cart</h1>
             <table> 
@@ -56,10 +56,10 @@
                         </tr>
                     </form>
                 </c:forEach>
-            </c:if>
-        </table>
-            <jsp:useBean id="d" class="java.util.Date" />
-            <h2>order Date: ${d}</h2>
+            </table>
+        </c:if>
+        <jsp:useBean id="d" class="java.util.Date" />
+        <h2>order Date: ${d}</h2>
         <h2>shipping date:  du kien giao hang sau 7 ngay</h2>
         <h2>Total money: ${sum}</h2>
         <form action="MainServlet" method="post">
@@ -67,7 +67,10 @@
             <input type="submit" value="checkout" />
         </form>
         <%
-            }else {
+            }
+
+            
+                else {
                 out.print("<h1>Empty</h1>");
             }
         %>

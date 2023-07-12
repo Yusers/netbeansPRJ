@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controllers;
+package controller;
 
-import basicobject.Categories;
-import basicobject.Item;
-import dbaccess.CateDAO;
-import dbaccess.ItemDAO;
+import basicobject.Car;
+import dbaccess.CarDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author overw
  */
-public class LoadItemServlet extends HttpServlet {
+public class AddToCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,53 +35,39 @@ public class LoadItemServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            // LoadItem
-            String editAction = request.getParameter("editAction");
-            String url = "MainServlet?action=2";
-            ArrayList<Item> listItems = ItemDAO.getAllItems();
-            if (!listItems.isEmpty() || listItems.size() > 0) {
-                request.setAttribute("Items", listItems);
-                String faqLoad = request.getParameter("faq");
-                if (faqLoad != null) {
-                    url = "MainServlet?action=6";
-                }
-            }
-
-            // Truong hop nhan nut edit
-            // Neu ng dung bam edit thi itemid se ton tai
-            String itemid = request.getParameter("itemid");
-            if (editAction != null) {
-                if (itemid != null) {
-                    Item item = ItemDAO.getItem(Integer.parseInt(itemid));
-                    if (item != null) {
-                        request.setAttribute("Item", item);
-                        String cateidParam = request.getParameter("cateid");
-                        int cateid = Integer.parseInt(cateidParam);
-                        // Dua cateid cua item do len dau mang
-                        ArrayList<Categories> listCate = CateDAO.getAllCate();
-                        int pos = listCate.indexOf(CateDAO.getCate(cateid));
-                        Categories firstIndex = listCate.get(0);
-                        listCate.set(0, listCate.get(pos));
-                        listCate.set(pos, firstIndex);
-                        request.setAttribute("ListCate", listCate);
+            String carId = request.getParameter("txtcarid");
+            Car c = CarDAO.getCar(carId);
+            HttpSession session = request.getSession();
+            HashMap<Car, Integer> cart = (HashMap<Car, Integer>) session.getAttribute("cart");
+            if (cart == null) {
+                cart = new HashMap<>();
+                cart.put(c, 1);
+            } else {
+                boolean flag = false;
+                Car findCar = null;
+                for (Car tam : cart.keySet()) {
+                    if (tam.getId().equals(carId)) {
+                        flag = true;
+                        findCar = tam;
                     }
                 }
-            }
 
-            // Truong hop nhan nut delete
-            String deleteAction = request.getParameter("deleteAction");
-            if (deleteAction != null) {
-                url = "MainServlet?action=4&itemid=" + itemid;
+                if (flag) {
+                    int quantity = cart.get(findCar);
+                    quantity++;
+                    cart.put(findCar, quantity);
+                } else {
+                    cart.put(c, 1);
+                }
             }
-
-            // Chuyen trang
-            request.getRequestDispatcher(url).forward(request, response);
+            session.setAttribute("cart", cart);
+            response.sendRedirect("MainServlet?action=");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
